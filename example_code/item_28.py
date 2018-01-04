@@ -14,6 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# カスタムコンテナ型はcollection.abcを継承する
+#  カスタムコンテナ型とは
+#  collection.abcとは
+#  なんで継承する必要があるの
+# 覚えておくこと
+# 　単純なユースケースでは（ListはDict)のようなpythonのコンテナ型から直接継承する
+# 　カスタムコンテナ型を正しく実装するには多数のメソッドが必要なことに注意する
+# 　作ったクラスが必要なインターフェースと振る舞いを備えていることを確かなものにするためにカスタムコンテナ型はcollections.abcで定義されたインターフェースを継承する
+#   一個一個メソッド追加するとクソめんどくさいので、collections.abc継承して、エラー出た奴だけ実装したほうが楽ということっぽい。この例だと__getitem__、__len__実装してる。
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -73,6 +82,7 @@ class IndexableNode(BinaryNode):
         return found, count
         # Returns (found, count)
 
+# インデックスが与えられた時の振る舞いを定義できますということ
     def __getitem__(self, index):
         found, _ = self._search(0, index)
         if not found:

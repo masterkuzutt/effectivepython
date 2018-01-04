@@ -19,6 +19,12 @@ import logging
 from pprint import pprint
 from sys import stdout as STDOUT
 
+# getやsetメソッドよりも素のままの属性を使う
+# 覚えておくこと
+# 　単純なパブリック属性を使って新たなクラスのインターフェースを定義し、setやgetメソッドは定義しない
+# 　必要ならオブジェクトの属性にアクセスされた時の特別なふるまいを@property を使って定義する
+# 　驚き最小限の原則を守り、@propertyメソッドで奇妙な副作用が生じるのを防ぐ
+# 　@propertyメソッドが高速なことを確かめる。遅かったり、複雑になったりする作業は通常のメソッドを使う
 
 # Example 1
 class OldResistor(object):
@@ -41,6 +47,7 @@ print('After:  %5r' % r0.get_ohms())
 
 # Example 3
 r0.set_ohms(r0.get_ohms() + 5e3)
+# わかりづらいからやめたほうがいいと
 
 
 # Example 4

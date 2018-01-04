@@ -14,6 +14,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 再利用可能な@propertyメソッドにディスクリプタを使う
+# 　再利用可能なってどういうこと。
+# 　ディスクリプタってなに
+# 　→getterとsetterの処理だけ持ってるクラスで、それを共通で利用しましょうという話。個別にそういう機能があるように見えるのでわかりづらくないかこれ。
+# 　なんで使うの
+# 覚えておくこと
+# 　ディスクリプタクラスを定義して@propertyメソッドの振る舞いや確認作業を再利用する
+# 　WeakKeyDictionaryを用いて、ディスクリプタクラスがメモリリークを起こさないようにする
+# 　__getattribute__がディスクリプタプロトコルをどのように使って属性の取得や設定を行っているか、正確に理解しようとして立往生しない
+
+# プロトコルって？
+# 　→特定の性質を持つオブジェクトが実装すべきメソッドのこと
+# 　　なので、ディスクリプタはディスクリプタプロトコルのメソッドを実装する
+# そもそも@propertyは再利用できないと書いてあるが。。。
+# 同じクラス内の別の属性で再利用することができないって意味わからんし当たり前じゃないの？
+# 再利用したいって具体的にどういうことなのかがよくわからない
+
+
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
