@@ -14,6 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# サブクラスをメタクラスで検証する
+# 覚えておくこと
+# 　サブクラスの妥当性をその型のオブジェクトが作られる前に検証するにはメタクラスを使う
+# 　メタクラスはpython2とpython3で構文が少し異なる。
+# 　メタクラスの__new__メソッドはclass文の本体全部が処理された後に実行される。
+#
+# これクラス属性にしか使えなくない？
+# インスタンス化されたときにチェックしないとダメじゃない？
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -27,6 +35,7 @@ class Meta(type):
         print = pprint
         print((meta, name, bases, class_dict))
         print = orig_print
+        #　こいつを継承したクラスの情報がここで出力される。インスタンス属性なんかもclass_dictに入ってくる。
         return type.__new__(meta, name, bases, class_dict)
 
 class MyClass(object, metaclass=Meta):

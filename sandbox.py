@@ -1,24 +1,13 @@
-class Org(object):
-    
-    def __init__(self, val):
-        self.val = val
-
-    
-    @property
-    def value (self):
-        return self.val 
-
-    @value.setter
-    def value(self,value):
-        self.val = value 
-
-
-class hoge(Org):
-    pass
+import logging
+from pprint import pprint
+from sys import stdout as STDOUT 
 
 
 
-t = hoge(1)
-t.value = 'hoge'
 
-print(t.value)
+chile_ranks = {'ghost': 1, 'habanero': 2, 'cayenne': 3}
+
+rank_dict = {rank: name for name, rank in chile_ranks.items()}
+chile_len_set = { len(name) for name in rank_dict.values() }
+print(rank_dict)
+print(chile_len_set)

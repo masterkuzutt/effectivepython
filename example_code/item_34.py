@@ -14,6 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# クラスの存在をメタクラスで登録する
+# 覚えておくこと
+# 　クラス登録はモジュラーなpythonプログラムを構築するための有用なパターンである
+# 　⇒クラス登録ってなに
+#    register?
+# 　メタクラスはプログラムで基底クラスがサブクラスされるたびに登録コードを自動的に実行するようにする
+# 　クラス登録にメタクラスを使うと登録呼び出しを決して忘れないようにしてくれてエラーをなくせる
+# 　⇒登録呼び出しって何
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

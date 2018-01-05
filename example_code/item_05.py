@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Know How to Slice Sequences
+# 覚えておくこと
+# 　冗長を避ける。添字startに0を指定したり、endに列長を指定したりしない
+# 　スライスでは境界外の添字startやendが許され（a[:20]やa[-20]:のように）シーケンスの前後境界のスライスが簡単に表現できる。
+# 　リストのスライスへの代入では、元のシーケンスの指定範囲がたとえ長さが違っていても参照されているもので置き換えられる。
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
