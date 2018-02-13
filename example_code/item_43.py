@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# contextlibとwith文をtry/finallyの代わりに考える
+    # 覚えておくこと
+    # 　with文はtry/finallyブロックのロジックを再利用して見た目をすっきりさせる
+    # 　組み込みモジュールcontextlibはwith文で自分の関数を使うことを容易にするcontextmanagerデコレータを提供する
+    # 　コンテキストマネージャでyieldした値はwith文のas部分に引き渡される。これは、コードが特別なコンテキストのものに直接アクセスできるようにするので便利である。
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

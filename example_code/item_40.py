@@ -14,6 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 多くの関数を平行に実行するにはコルーチンを考える。
+# https://www.kannon.link/fuku/index.php/2016/10/16/01-14/
+# コルーチン
+# 　一時停止可能な関数
+# 　外から値を与えられる関数
+# separetion of concern ってなに。
+
+# 覚えておくこと
+    # コルーチンは何万もの関数を見かけ上一斉に実行する効率的な方法を提供する
+    # ジェネレータの内部ではyield式の値は外部のコードでジェネレータのsendメソッドに渡された値になる。
+    # コルーチンは取り巻く環境との相互作業からプログラムの中核となるロジックを分離する強力なツールである。
+    # python2はyield fromやジェネレータからのreturn文をサポートしていない。
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -34,9 +47,18 @@ it.send('Second')
 
 # Example 2
 def minimize():
-    current = yield
+    current = yield # ここは最初のnext(it)で実行される。
+    # で、ここで止まってるが、yieldで返す値がなくて、右辺の部分？だけ実行されて
+    # 次にit.send()呼ばれるとがcurrentに入る
+
+    # ここに fload('inf')とか入れても動作は変わるが問題ない
+    # 最初のnext(it)でwhile の yieldまで進んでinf返す。
+
     while True:
-        value = yield current
+        # currentを返して止まる。一回目は初期値が最小値なのでこれでいい
+        # 2回目にsendが呼ばれると、value に値を格納して計算実行してループで戻ってきて
+        # 右辺で止まる。
+        value = yield current　
         current = min(value, current)
 
 

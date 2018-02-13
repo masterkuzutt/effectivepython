@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Avoid More Than Two Expressions in List Comprehensions
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

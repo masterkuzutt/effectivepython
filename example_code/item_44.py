@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# copyregでpickleを信頼できるようにする
+# 覚えておくこと
+# 　組み込みモジュールpickleは、信頼されたプログラム間でオブジェクトをシリアライズ、デシリアライズするためのみに役立つ。
+# 　pickleモジュールは、自明なユースケース以外の使い方ではまずいことがある。
+# 　pickleに組み込みモジュールcopyregを使うことにより、かけている属性値の追加、クラスのバージョン管理、安定なインポートパスの提供ができる
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

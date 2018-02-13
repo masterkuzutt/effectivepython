@@ -14,6 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# APIからの呼び出し元を隔離するために、ルート例外を定義する
+
+# 覚えておくこと
+# 　モジュールのルート例外を定義することで、API利用者がAPIから自分を保護できる
+#   ルート例外をとらえることでAPIを消費するコードのバグが見つけやすくなる
+# 　pythonのException基底クラスを捕まえることでAPI実装におけるバグが見つけやすくなる。
+#   ⇒たぶんcatchなんだろうな。。
+#   中間的なルート例外はAPI利用者を困らせることなく、将来より細かな例外型を追加するのを支援する。
+#   ⇒訳は意味不明。一般的？
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

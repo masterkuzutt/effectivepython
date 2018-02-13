@@ -13,6 +13,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# 本当の並列性のためにconcurrent.futuresを考える
+# 覚えておくこと
+# CPUボトルネック部分をC拡張モジュールに移すのはpythonコードへの投資を最大化しながら性能を改善する効率的な方法だ。しかしこれは高価なだけでなくバグを作りかねない。
+# mulitiprocessingモジュールはある種のpython計算を最小限の努力で並列化する強力なツールを提供する
+# multiprocessingの能力は組み込みモジュールconcurrent.futuresとその単純なProcessPoolExecutorクラスで活かすのが一番良い。
+# mulitiprocessingモジュールの高度な機能の部分はあまりに複雑なので避けたほうがよい。
+
 
 # Preamble to mimick book environment
 import logging

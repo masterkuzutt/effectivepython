@@ -14,6 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# クロージャ―が変数スコープとどうかかわるかを知っておく
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
