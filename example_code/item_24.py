@@ -13,6 +13,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# pythonでは__init__という単一のコンストラクタしか許されていないとか、他の言語ではコンストラクタポリモーフィズムを用いて云々の下りがよくわからない。
+
 
 # Preamble to mimick book environment
 import logging

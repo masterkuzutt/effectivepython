@@ -14,6 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# スレッドはブロッキングI/Oに使い、並列性に使うのは避ける
+# GIL Global Interprter Lock = mutexである
+# 覚えておくこと
+    # pythonのスレッドはグローバルインタプリタロックのためにマルチコアCPUをでバイトコードを並列に実行することができない
+    # pythonのスレッドは見かけ上は同じ時間内に複数のことを処理する簡単な方法を提供するのでＧＩＬの問題があっても役に立つ
+    # pythonスレッドを使って複数のシステムコールを並列に実行することができる。これによりブロッキングＩＯを行いながら同じ時間内に計算することができる
+    
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

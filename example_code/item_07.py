@@ -13,6 +13,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# mapやfilterの代わりにリスト内法表記を使う
+# 覚えておくこと
+# 　リスト内包表記は余分なlambda式を必要としないので組み込み関数のmapやfilterよりも明確だ
+# 　リスト内包表記は入力リストから要素を抜き出すのが容易であり、これは、filterの助けなしにmapで行えない
+# 　辞書と集合も内包表記を使うことができる
+
 
 # Preamble to mimick book environment
 import logging

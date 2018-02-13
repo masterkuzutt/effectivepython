@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# copyregでpickleを信頼できるようにする
+# 覚えておくこと
+
+
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

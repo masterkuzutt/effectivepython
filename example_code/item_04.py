@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 複雑な式の代わりにヘルパー関数を書く
+# 覚えておくこと
+# pythonの構文はただ複雑なだけで読みにくい1行の式をあまりにも書きやすくしている。
+# 複雑な式は特に同じロジックを繰り返す必要がある場合にはヘルパー関数にする。
+# if/else条件式を使うとorやandなどの論理演算子を使うよりも読みやすくなる
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

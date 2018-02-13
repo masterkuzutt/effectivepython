@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# rangeよりはenumerateにする
+# 覚えておくこと
+#     enumerateの簡潔な構文でイテレータでループしながら処理中の要素の添字を取り出すことができる
+#     rangeでループしてシーケンスの添字を処理するよりもenumerateのほうがよい。
+#     enumerateの第２引数でカウンタを開始する数（デフォルトは０）を指定できる
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

@@ -13,6 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# シーケンスをどのようにスライスするか知っておく
+# 覚えておくこと
+# 　冗長を避ける。添え字startに0を指定したり、endに列長を指定したりしない
+# 　スライスでは境界外の添え字startやendが許され、（a[:20]やa[-20:]のように）シーケンスの前後境界のスライスが簡単に表現でできる。
+# 　リストのスライスへの代入では元のシーケンスの指定範囲がたとえ長さが違っていても参照されているもので置き換えられる。
 
 # Preamble to mimick book environment
 import logging

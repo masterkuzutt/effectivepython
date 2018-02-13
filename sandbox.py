@@ -1,24 +1,27 @@
-class Org(object):
-    
-    def __init__(self, val):
-        self.val = val
-
-    
-    @property
-    def value (self):
-        return self.val 
-
-    @value.setter
-    def value(self,value):
-        self.val = value 
+import logging
+from pprint import pprint
+from sys import stdout as STDOUT
 
 
-class hoge(Org):
-    pass
+from threading import Lock
+lock = Lock()
+with lock:
+    print('Lock is held')
 
 
+lock.acquire()
+try:
+    print('lock is held')
+finally:
+    lock.release()
 
-t = hoge(1)
-t.value = 'hoge'
 
-print(t.value)
+import logging 
+logging.getLogger().setLevel(logging.WARNING)
+def my_function():
+    logging.debug("Some debug data")
+    logging.debug("Error log here")
+    logging.debug("More debug data")
+
+
+my_function()

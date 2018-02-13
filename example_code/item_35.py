@@ -14,6 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# クラス属性をメタクラスで注釈する
+# どの項だったかはっきりしないが、ディスクリプタの例でweakrefを使っていた例よりも
+# インスタンスごとの値の保存は簡単に見える。
+
+# 覚えておくこと
+# メタクラスはクラスが完全に定義される前にクラス属性を修正することを可能にする
+# →よくわからない
+# ディスクリプタとメタクラスとは宣言的なふるまいと実行時イントロスペクションのための強力なコンビだ
+# メタクラスをディスクリプタと一緒に使うことでメモリリークとweakrefモジュールの両方を避けることができる
+# →最初にいえや
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -53,10 +64,12 @@ print('After: ', repr(foo.first_name), foo.__dict__)
 # Example 4
 class Meta(type):
     def __new__(meta, name, bases, class_dict):
+        # keyにfirst_nameが入って、valueにField()が格納される感じ？ 
         for key, value in class_dict.items():
             if isinstance(value, Field):
                 value.name = key
                 value.internal_name = '_' + key
+        # これの意味が分からない
         cls = type.__new__(meta, name, bases, class_dict)
         return cls
 
