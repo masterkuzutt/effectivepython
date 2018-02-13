@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# forループとwhileループの後のelseブロックは使うのを避ける
+# 覚えておくこと
+#     pythonにはforやwhileのループブロックの直後にelseブロックを許す特別な構文がある
+#     ループの後のelseブロックはループ本体でbreak文が実行されなかった場合にのみ実行される
+#     ループの直後のelseブロックは振る舞いが直感的でなく誤解を生みやすいので使わない
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

@@ -14,7 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+<<<<<<< HEAD
 # Consider Generator Expressions for large Comperehensions 
+=======
+# 大きな内包表記にはジェネレータ式を考える
+# 覚えておくこと
+#     リスト内包表記は大量の入力に対してメモリを使いすぎるという問題を引き起こす
+#     ジェネレータ式はイテレータとして出力を１つずつ生成するのでメモリ問題を回避する
+#     ジェネレータ式はジェネレータ式から得られたイテレータを他のfor部分式に渡すことによって組み合わせることができる。
+#     ジェネレータ式は連鎖的に組み合わせると非常に速く動く
+>>>>>>> c4bdd5f280fa7c6c9a45bc823396d236787ec35a
 
 # Preamble to mimick book environment
 import logging

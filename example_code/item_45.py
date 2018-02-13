@@ -17,10 +17,11 @@
 # ローカルクロックにはtimeでなくdatetimeを使う。
 # 覚えておくこと
 # 　異なるタイムゾーン間の返還にはtimeモジュールを使わない
+#   ➡timeはタイムゾーンの情報をOSからもらうのでプラットフォーム依存
 # 　datetime組み込みモジュールをpytzモジュールと一緒に使い、異なるタイムゾーン間の変換をする
+#   ➡pytzがタイムゾーンのDBを持ってる
 # 　時刻を常にUTCで表し、表示の前の最後の段階でローカル時間に変換する。
 
-# Preamble to mimick book environment
 import logging
 from pprint import pprint
 from sys import stdout as STDOUT

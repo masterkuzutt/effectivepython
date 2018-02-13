@@ -13,6 +13,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# スレッドのデータ競合のためにLockを使う
+# 覚えておくこと
+# pythonにはグローバルインタプリタロックがあるが、プログラムの中でスレッド間のデータ競合が起こらないように保護するのはプログラマの責任だ
+# プログラムで複数スレッドがロックなしに同じオブジェクトを変更することを許してしまったらデータ構造が壊れてしまう
+# 組み込みモジュールthreadingのlockクラスはpythonの標準相互排他ロック実装である
 
 # Preamble to mimick book environment
 import logging

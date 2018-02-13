@@ -30,6 +30,7 @@
 # そもそも@propertyは再利用できないと書いてあるが。。。
 # 同じクラス内の別の属性で再利用することができないって意味わからんし当たり前じゃないの？
 # 再利用したいって具体的にどういうことなのかがよくわからない
+# 　→わかった
 
 
 
@@ -74,6 +75,7 @@ class Exam(object):
 
 
 # Example 4
+# 同じようなコードの繰り返しになるので非効率
     @property
     def writing_grade(self):
         return self._writing_grade
@@ -111,6 +113,7 @@ class Grade(object):
 
 class Exam(object):
     # Class attributes
+    # 再利用！
     math_grade = Grade()
     writing_grade = Grade()
     science_grade = Grade()
@@ -129,7 +132,7 @@ Exam.__dict__['writing_grade'].__set__(exam, 40)
 print(exam.writing_grade)
 
 
-# Example 10
+# Example 10　Example 9の解釈のされ方
 print(Exam.__dict__['writing_grade'].__get__(exam, Exam))
 
 

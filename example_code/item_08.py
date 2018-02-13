@@ -14,8 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+<<<<<<< HEAD
 # Avoid More Than Two Expressions in List Comprehensions
 
+=======
+# リスト内包表記には３つ以上の式をさける
+# 覚えておくこと
+    # リスト内包表記は複数レベルのループと一つのループに複数の条件をサポートする
+    # ３つ以上の式を使うリスト内包表記は読むのが難しく、避けるべきだ
+>>>>>>> c4bdd5f280fa7c6c9a45bc823396d236787ec35a
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -23,6 +30,7 @@ from sys import stdout as STDOUT
 
 
 # Example 1
+# これは正直よくわかっていない
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flat = [x for row in matrix for x in row]
 print(flat)

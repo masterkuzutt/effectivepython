@@ -14,6 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# イテレータを並列に処理するにはzipを使う
+# 覚えておくこと
+    # 組み込み関数zipが複数のイテレータを並列に処理するのに使える
+    # python３ではzipはタプルを生成する遅延評価ジェネレータである。python２ではzipはすべての結果をタプルのリストとして返す
+    # 異なる長さのイテレータを与えるとzipはなにもいわずに出力を最短で止める
+    # 組み込みモジュールintetoolsのzip_longest関数が複数のイテレータの長さが異なるときに使える。
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

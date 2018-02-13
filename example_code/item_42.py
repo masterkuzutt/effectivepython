@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# functools.wrapsを使って関数デコレータを定義する
+# 覚えておくこと
+#     デコレーターは実行時にある関数が他の関数を修正することを許すpython構文だ
+#     デコレーターを使うことでデバッガのようなイントロスペクションをするツールに奇妙な振る舞いを引き起こすことがある
+#     問題を起こさないようにデコレーターを自分で定義するときは組み込みモジュールfunctoolsのデコレーターwrapを使う
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

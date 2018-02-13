@@ -14,12 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+# subprocessを使って子プロセスを管理する
+# 覚えておくこと
+# 　子プロセスを実行してその入出力ストリームを管理するにはsubprocessモジュールを使う
+# 　子プロセスは、pythonインタプリタと並列に実行され、CPU利用を最大化することができる
+# 　communicateのtimeout引数を使って、デッドロックや宙ぶらり状態の子プロセスを回避する
+# 　　→言いたいことはわかるけど宙ぶらりて
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
 from sys import stdout as STDOUT
 
-
+# windowsの場合、Popenのオプションにshell=Trueを付与する必要があるよう。なんでだろうね
 # Example 1
 import subprocess
 proc = subprocess.Popen(
@@ -31,6 +38,7 @@ print(out.decode('utf-8'))
 
 # Example 2
 from time import sleep, time
+# win10 sleepないっぽいのでtimeoutコマンド（引数は秒で整数）に変えないとだめっぽい
 proc = subprocess.Popen(['sleep', '0.3'])
 while proc.poll() is None:
     print('Working...')

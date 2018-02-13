@@ -14,6 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# try/ecept/else/finallyの各ブロックを活用する
+# 覚えておくこと
+    # try/finally複合文ではtryブロックで例外が起ころうと起こるまいと後始末処理を実行できる
+    # elseブロックはtryブロックでのコードを最小にして成功した場合を見た目にもtry/exceptブロックから区別できるようにする
+    # elseブロックは成功したtryブロックの後でfinallyブロックによる共通後始末処理の前に追加作業を行うのに便利だ
+
+    
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

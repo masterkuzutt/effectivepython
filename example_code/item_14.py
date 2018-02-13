@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Noneを返すよりは例外を選ぶ
+# 覚えておくこと
+    # Noneを返すことで特別な意味を示す関数はNoneと（例えばゼロ、空文字列など）他の値とがすべて条件式においてFalseに評価されるのでエラーを引き起こしやすい。
+    # Noneを返す代わりに例外を上げて特別な条件を示す。呼び出し元のコードでその処理が文書化されており適切に例外処理することを期待する。
+    # →文書化は呼び出し元のコードではないのでは？
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

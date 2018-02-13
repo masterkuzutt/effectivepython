@@ -14,6 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 覚えておくこと
+# python3ではbytesは8ビット値の列を含みstrはunicode文字列を含む。bytesとstrとのインスタンスは（<や⁺のような）演算子で一緒に使うことができない
+# python2ではstrは8ビット値の列だけを含みUnicodeはUnicode文字列を含む。strとUnicodeとはstrが7ビットASCII文字だけを含むなら演算で一緒に扱うことができる。
+# ヘルパー関数を使って操作する入力が期待している（8ビット値、UTF-8符号化文字、Unicode文字など）文字列型になっていることを確かめる。
+# ファイルにバイナリデータを読み書きするには常に（'rb'または'wb'のような）バイナリモードでオープンする
+
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
