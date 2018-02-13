@@ -14,11 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+<<<<<<< HEAD
 # 一つのスライスでは、start, end, strideを使わない
 # 覚えておくこと
 # スライスで、start,end,strideを指定すると非常に理解しにくいことがある
 # スライスでは出来るだけ正の値をstartかendのうちどちらか一方のみと一緒に使うようにする。可能な限り負のstride値を使わない
 # １つのスライスにstart、end、strideを使わないようにする。３つすべてが必要な時には２つの代入を使う。（１つはスライスに、もう１つはstrideだけに）か、組み込みモジュールintertoolsのIsliceを使うことを考える
+=======
+# Avoid Using start,end and stribe in a Single Slice.
+>>>>>>> 048042019ab6ff5f7e607fcc5737c54d3ddf1e1e
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

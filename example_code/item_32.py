@@ -14,6 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 遅延属性には__getattr__,__getattribute__,setattrを使う
+#   そもそも遅延属性って何
+#   ⇒結局よくわからんけどインタンスに設定されてない属性にアクセスすることなのかな？
+# 覚えておくこと
+#   オブジェクトの属性を遅延的にロードしたり保存したりするにはgetattr,setattrを使う
+#   __getattr__は見つからない属性にアクセスするとき一度だけ呼び出され、__getattribute__は属性がアクセスされるたびに呼び出されることを理解する
+# 　⇒インスタンスに登録された属性が常に最新じゃないとダメな時にはgetattributeを使うなど。
+#   ⇒これは辞書アプリにも使えるかもね。
+# 　super()（つまりobjectクラス)のメソッドを使ってインスタンス属性に直接アクセスすることで、__getattribute__、と__getattr__とで無限再帰に入るのを割ける。
+#　⇒よくわからん
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -104,6 +115,7 @@ print('foo exists: ', hasattr(data, 'foo'))
 
 
 # Example 8
+# __settattr__は毎回必ず呼び出される(__setattribute__とかはない)
 class SavingDB(object):
     def __setattr__(self, name, value):
         # Save some data to the DB log
@@ -131,6 +143,7 @@ class BrokenDictionaryDB(object):
 
     def __getattribute__(self, name):
         print('Called __getattribute__(%s)' % name)
+        #　これだとself._data[name]にアクセス時にもう一回この関数にアクセスされて無限ループに入る
         return self._data[name]
 
 
@@ -150,6 +163,11 @@ class DictionaryDB(object):
         self._data = data
 
     def __getattribute__(self, name):
+        # これで親の辞書から引くようにすると大丈夫とのこと。なぜかはよくわからん。
+        # __getattribute__はオブジェクトクラスからの継承
+        # super().__getattribute__はなんか挙動が違うっぽい。
+        # だったら__getattribute__/__setattr継承するならかならずsuperしとけと言う話なのか？
+        # [TODO]http://iuk.hateblo.jp/entry/2016/11/16/064608
         data_dict = super().__getattribute__('_data')
         return data_dict[name]
 

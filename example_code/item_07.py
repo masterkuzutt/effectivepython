@@ -20,6 +20,7 @@
 # 　辞書と集合も内包表記を使うことができる
 
 
+# Use List Comperehensions Instead of map and filter
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

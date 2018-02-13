@@ -22,7 +22,7 @@
 # 　単純なユースケースでは（ListはDict)のようなpythonのコンテナ型から直接継承する
 # 　カスタムコンテナ型を正しく実装するには多数のメソッドが必要なことに注意する
 # 　作ったクラスが必要なインターフェースと振る舞いを備えていることを確かなものにするためにカスタムコンテナ型はcollections.abcで定義されたインターフェースを継承する
-#   一個一個メソッド追加するとクソめんどくさいので、collections.abc継承して、エラー出た奴だけ実装したほうが楽ということっぽい。この例だと__getitem__、__len__実装してる。
+#   一個一個メソッド追加するとクソめんどくさいので、collections.abc継承して、エラー出た奴だけ実装したほうが楽ということっぽい。この例だと__getitem__、__len__実装してる。これほんとに忘れないようにしようねぐらいの意味しかないな。
 # Preamble to mimick book environment
 import logging
 from pprint import pprint
@@ -43,6 +43,7 @@ class FrequencyList(list):
 
 
 # Example 2
+# こいつはリストオブジェクトに頻度を集計して返すメソッド追加するだけなのでそんなに気にする必要ない
 foo = FrequencyList(['a', 'b', 'a', 'c', 'b', 'a', 'd'])
 print('Length is', len(foo))
 foo.pop()
