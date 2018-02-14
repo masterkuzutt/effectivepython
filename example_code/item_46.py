@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 組み込みアルゴリズムとデータ構造を使う
+# 覚えておくこと
+#     アルゴリズムやデータ構造についてpythonの組み込みモジュールを活用する
+#     これらの関数を自分で実装しないこと。正しく実装するのは難しい
+
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# 精度が特に重要な場合はDecimalを使う
+#     pythonには実用上あらゆる数値の型を表す、モジュールで提供される組み込みの型やクラスがある。
+#   　Decimelクラスは金融部門で計算する値のような高い精度で正確な丸め処理を必要とする状況に理想的である
 # Preamble to mimick book environment
 import logging
 from pprint import pprint

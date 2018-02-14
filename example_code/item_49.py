@@ -14,7 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# すべての関数、クラス、モジュールに関してドキュメンテーション文字列を書く
+# 覚えておくこと
+    # あらゆるモジュール、クラス、関数にドキュメンテーション文字列を使ってドキュメンテーションを書く。コードの変化に追随してドキュメンテーションを最新に保つ
+    # モジュールについて、モジュールの内容とすべてのユーザが知っておくべき重要なクラスや関数を記載する
+    # クラスについてclass文に続くドキュメンテーション文字列にふるまい、重要な属性、サブクラスのふるまいを記載する
+    # 関数とメソッドについてdef文に続くドキュメンテーション文字列にすべての引数、戻り値、引き起こされる例外、その他ふるまいを記載する
+
 # Preamble to mimick book environment
+
 import logging
 from pprint import pprint
 from sys import stdout as STDOUT
