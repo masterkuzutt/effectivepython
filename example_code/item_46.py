@@ -42,6 +42,7 @@ a['bar'] = 2
 from random import randint
 
 # Randomly populate 'b' to cause hash conflicts
+# ループ終わらん毎回同じ値生成しているということか
 while True:
     z = randint(99, 1013)
     b = {}
@@ -60,6 +61,9 @@ print('Equal?', a == b)
 
 
 # Example 3
+# Example2 2がうまく動かないので意味わからなくなっている。
+# ordereddict使わない版でも同じになる。少ないからかも。
+
 from collections import OrderedDict
 a = OrderedDict()
 a['foo'] = 1
@@ -124,6 +128,7 @@ print(i)
 
 
 # Example 11
+# 遅くない？
 from bisect import bisect_left
 i = bisect_left(x, 991234)
 print(i)
